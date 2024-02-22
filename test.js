@@ -45,7 +45,7 @@ const config = {
         		customCanvasBackgroundColor: {
                 color: '#404c45',
               },
-            tooltips: {
+            tooltip: {
                 callbacks: {
                     // Adjust the label callback to display the value and change
                     label: function(context) {

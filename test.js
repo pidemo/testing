@@ -89,7 +89,7 @@ const config = {
                         const dataset = context.dataset;
                         const dataPoint = dataset.data[context.dataIndex];
                         const change = dataPoint.change;
-                        return `${label}: ${value} | Change : ${change >= 0 ? '+' : ''}${(change * 100).toFixed(2)}%)`;
+                        return `${label}: ${value} | Change : ${change >= 0 ? '+' : ''}${(change * 100).toFixed(2)}%`;
                     }
                 },
                 // Adjust font color of tooltips

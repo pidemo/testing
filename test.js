@@ -47,6 +47,7 @@ const config = {
               },
             tooltip: {
                 enabled: true, // Enable tooltips
+                position: 'nearest',
                 backgroundColor: '#fff', // Tooltip background color
                 titleColor: '#000', // Title text color
                 titleFont: {
@@ -96,6 +97,7 @@ const config = {
         },
         // legend: {display: false, // Disable the default legend },
         interaction:{
+            //intersect: false,
             mode: 'index'
         },
         scales: {

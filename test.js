@@ -11,6 +11,7 @@ const labels = Object.keys(itemsData[0].Data).sort(); // Assuming all items have
 const datasets = itemsData.map(item => ({
         label: item.Metadata.Name,
         borderColor: item.Metadata.Color,
+        pointBackgroundColor: item.Metadata.Color,
         //data: labels.map(label => item.Data[label].value),
         data: labels.map(label => ({
             x: label,

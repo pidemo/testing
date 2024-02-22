@@ -78,13 +78,17 @@ const config = {
                     */
                     title: function(tooltipItems) {
                         // Customize the title
-                        return 'Custom Title: ' + tooltipItems[0].label;
+                        return tooltipItems[0].label;
                     },
                     label: function(context) {
                         // Customize the label
                         const label = context.dataset.label || '';
                         const value = context.parsed.y;
-                        return `${label}: ${value}`;
+                        const dataset = context.dataset;
+                        const dataPoint = dataset.data[context.dataIndex];
+                        //const value = dataPoint.y;
+                        const change = dataPoint.change;
+                        return `${label}: ${value} | % Change : ${change >= 0 ? '+' : ''}${(change * 100).toFixed(2)}%)`;
                     }
                 },
                 // Adjust font color of tooltips

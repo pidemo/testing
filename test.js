@@ -46,14 +46,45 @@ const config = {
                 color: '#404c45',
               },
             tooltip: {
+                enabled: true, // Enable tooltips
+                backgroundColor: '#fff', // Tooltip background color
+                titleColor: '#000', // Title text color
+                titleFont: {
+                    size: 14, // Title font size
+                    weight: 'bold', // Title font weight
+                },
+                bodyColor: '#000', // Body text color
+                bodyFont: {
+                    size: 12, // Body font size
+                },
+                borderColor: '#666', // Tooltip border color
+                borderWidth: 1, // Tooltip border width
+                cornerRadius: 4, // Tooltip corner radius
+                displayColors: true, // Display color boxes in the tooltip
+                boxWidth: 10, // Color box width
+                boxHeight: 10, // Color box height
+                usePointStyle: true, // Use point style for the color boxes (circle, rect, etc.)
+                // Custom function for tooltip labels
                 callbacks: {
                     // Adjust the label callback to display the value and change
+                    /* v1
                     label: function(context) {
                         const dataset = context.dataset;
                         const dataPoint = dataset.data[context.dataIndex];
                         const value = dataPoint.y;
                         const change = dataPoint.change;
                         return `${dataset.label}: ${value} (Change: ${change >= 0 ? '+' : ''}${(change * 100).toFixed(2)}%)`;
+                    }
+                    */
+                    title: function(tooltipItems) {
+                        // Customize the title
+                        return 'Custom Title: ' + tooltipItems[0].label;
+                    },
+                    label: function(context) {
+                        // Customize the label
+                        const label = context.dataset.label || '';
+                        const value = context.parsed.y;
+                        return `${label}: ${value}`;
                     }
                 },
                 // Adjust font color of tooltips
